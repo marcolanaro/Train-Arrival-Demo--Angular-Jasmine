@@ -1,0 +1,29 @@
+<section class="cd-container">
+	<div class="header">
+		<span class="thick">{{journey.scheduled}}</span>
+		{{journey.origin}} 
+			to
+		{{journey.destination}} 
+	</div>
+	<div id="cd-timeline">
+		<div class="cd-timeline-back" ng-style="{'bottom':((callingPoints.length-getLastActual(callingPoints))*130-80)+'px','display':getLastActual(callingPoints)===false?'none':'inline'}"></div>
+		<div class="cd-timeline-block" ng-repeat="point in callingPoints">
+
+			<div class="cd-timeline-schedule" ng-class="classActual(point)">
+				<h2 class="thick">{{point.scheduled}}</h2>
+				<div class="cd-expected" ng-class="classLate(point)">{{point.expected}}</div>
+			</div>
+
+			<div class="cd-timeline-img" ng-class="classActual(point)"></div>
+
+			<div class="cd-timeline-content" ng-class="classActual(point)">
+				<h2>{{point.station}}</h2>
+				<div class="cd-latedetail" ng-class="classLate(point)">{{late(point)}}</div>
+				<div class="cd-platform">Platform <span class="thick">{{getPlatform(point)}}</span></div>
+			</div>
+		</div>
+		<div class="cd-timeline-over" ng-style="{'bottom':((callingPoints.length-getLastActual(callingPoints))*130-80)+'px','display':getLastActual(callingPoints)===false?'none':'inline'}"></div>
+		<div class="cd-timeline-imgtrain" ng-style="{'top':(getLastActual(callingPoints)*130)+'px','display':getLastActual(callingPoints)===false?'none':'inline'}">
+			<img src="images/cd-icon-location.svg">
+		</div>	</div>
+</section>

@@ -1,0 +1,194 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Droid Serif", serif;
+  color: #7f8c97;
+}
+
+a {
+  color: #acb7c0;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-size: 1.6rem;
+}
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+  width: 500px;
+  margin: 0 auto;
+}
+.cd-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+#cd-timeline {
+  position: relative;
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#cd-timeline::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 100px;
+  left: 158px;
+  /*height: 100%;*/
+  width: 4px;
+  background: #d7e4ed;
+}
+.cd-timeline-over {
+  width: 4px;
+  background: #C2D65F;
+  left: 158px;
+  top: 0;
+  position: absolute;
+}
+.cd-timeline-back {
+  width: 12px;
+  background: #0D345D;
+  left: 154px;
+  top: 0;
+  position: absolute;
+}
+.header {
+  background: #EEEEEE;
+  color: #24476C;
+  padding: 1em;
+  padding-left: 2em;
+  font-size: 22px;
+  font-size: 1.3rem;
+  position: relative;
+  width: 500px;
+}
+.cd-timeline-block {
+  position: relative;
+  width: 490px;
+  height: 130px;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+.cd-timeline-imgtrain {
+  position: absolute;
+  left: 135px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0D345D;
+  margin-top: 55px;
+}
+.cd-timeline-imgtrain img {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+.cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 145px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.cd-timeline-img.actual {
+  background: #C2D65F;
+  box-shadow: 0 0 0 4px #0D345D;
+}
+.cd-timeline-img.notactual {
+  background: #ffffff;
+  box-shadow: 0 0 0 4px #d7e4ed, inset 0 0 0 4px #d7e4ed;
+}
+.cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+div.actual, div.actual h2 {
+  color: #999999 !important;
+}
+div.notactual, div.notactual h2 {
+  color: #0D345D !important;
+}
+.minutesLate {
+  color: #CD2E40 !important;
+}
+.thick {
+  font-weight: bold;
+}
+.cd-timeline-content {
+  position: relative;
+  width: 250px;
+  float: right;
+  margin-right: 1em;
+}
+.cd-timeline-content div, .cd-timeline-schedule div {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-top: 1em;
+}
+.cd-timeline-content .cd-latedetail {
+  float: left;
+}
+.cd-timeline-content .cd-platform {
+  float: right;
+}
+.cd-timeline-schedule {
+  position: relative;
+  margin-left: 1em;
+  width: 80px;
+  text-align: right;
+  float: left;
+}
